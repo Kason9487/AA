@@ -14,6 +14,7 @@ local Players = Instance.new("TextLabel")
 
 --Properties:
 
+ScreenGui.Name = "_1anvjiwoadnkl123456"
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
