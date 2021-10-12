@@ -365,5 +365,4 @@ while wait(.1) do
         Speed.Text = "Speed : "..string.sub(StatFolder.Speed.Value,0,6)
         Stamina.Text = "Stamina : "..string.sub(StatFolder.CurrentStamina.Value,0,6).."/"..string.sub(StatFolder.Stamina.Value,0,6)
     end
-    updatePlayers()
 end
