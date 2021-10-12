@@ -88,7 +88,7 @@ game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpa
 game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
 
            wait(0.5)
-elseif Player.SavedData.CurrentStamina.Value <= 5 and PlrB:FindFirstChild("Green Tea") and PlrB:FindFIrstChild("Protein Bar") then
+elseif Player.SavedData.CurrentStamina.Value <= 5 and PlrB:FindFirstChild("Green Tea") and PlrB:FindFirstChild("Protein Bar") then
         Plr["Combat"].Parent = PlrB
         PlrB["Green Tea"].Parent = Plr
            Plr["Green Tea"]:Activate()
