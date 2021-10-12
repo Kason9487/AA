@@ -32,6 +32,7 @@ local w = library:CreateWindow('AA_Punch')
 w:Section('Created by Kason9487')
 
 local Punch = w:Toggle('Punch', {flag = "Punch"})
+local Punch2 = w:Toggle('Punch2', {flag = "Punch2"})
 
 while wait(.05) do
 
@@ -66,6 +67,49 @@ game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack
 wait(5)
 Plr["Green Tea"].Parent = PlrB
            wait(25)
+           PlrB["Combat"].Parent = Plr
+end
+end
+if w.flags.Punch2 then
+ if Plr:FindFirstChild("Combat") and Player.SavedData.CurrentStamina.Value >= 2 then
+        Plr["Combat"]:Activate()
+local args = {
+    [1] = "M1"
+}
+game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
+
+        wait(0.5)
+    elseif PlrB:FindFirstChild("Combat") and Player.SavedData.CurrentStamina.Value >= 2 then
+         PlrB["Combat"].Parent = Plr
+           Plr["Combat"]:Activate()
+           local args = {
+    [1] = "M1"
+}
+game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
+
+           wait(0.5)
+elseif Player.SavedData.CurrentStamina.Value <= 5 and PlrB:FindFirstChild("Green Tea") and PlrB:FindFIrstChild("Protein Bar") then
+        Plr["Combat"].Parent = PlrB
+        PlrB["Green Tea"].Parent = Plr
+           Plr["Green Tea"]:Activate()
+local args = {
+    [1] = "Green Tea",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
+wait(5)
+Plr["Green Tea"].Parent = PlrB
+           wait(25)
+           PlrB["Protein Bar"].Parent = Plr
+local args = {
+    [1] = "Protein Bar",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
+wait(5)
+Plr["Protein Bar"].Parent = PlrB
            PlrB["Combat"].Parent = Plr
 end
 end
