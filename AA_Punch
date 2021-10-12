@@ -33,7 +33,9 @@ w:Section('Created by Kason9487')
 
 local Punch = w:Toggle('Punch', {flag = "Punch"})
 local Punch2 = w:Toggle('Punch2', {flag = "Punch2"})
-
+local a = w:Button('Refresh', function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kason9487/AA/main/AA_Punch", true))()
+end)
 while wait(.05) do
 
 if w.flags.Punch then
