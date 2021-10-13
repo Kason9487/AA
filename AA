@@ -213,8 +213,9 @@ function updatePlayers()
         local StatFolder = plr2:FindFirstChild("SavedData")
         local templateClone = template:Clone()
 
-
+if StatFolder.CustomName.Value ~= nil then
         templateClone.DisplayName.Text = (StatFolder.CustomName.Value.." "..StatFolder.Clan.Value)
+end
         templateClone.RealName.Text = tostring(plr2.Name)		
 
         templateClone.Parent = scroller
