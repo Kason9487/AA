@@ -28,11 +28,13 @@ local Plr = game.Players.LocalPlayer.Character
 local PlrB = game.Players.LocalPlayer.Backpack
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/PSBGVH0R", true))()
-local w = library:CreateWindow('AA_Punch')
+local w = library:CreateWindow('AA_Training')
 w:Section('Created by Kason9487')
 
 local Punch = w:Toggle('Punch', {flag = "Punch"})
 local Punch2 = w:Toggle('Punch2', {flag = "Punch2"})
+local Run = w:Toggle('Run',{flag = "Run"})
+local Dura = w:Toggle('Dura',{flag = "Dura"})
 local a = w:Button('Refresh', function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Kason9487/AA/main/AA_Punch", true))()
 end)
@@ -115,4 +117,52 @@ Plr["Protein Bar"].Parent = PlrB
            PlrB["Combat"].Parent = Plr
 end
 end
+if w.flags.Run then
+    if Player.SavedData.CurrentStamina.Value >= 3 then
+local args = {[1] = true}
+game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
+wait(.01)
+keypress(0x57)
+elseif Player.SavedData.CurrentStamina.Value <= 2 and PlrB:FindFirstChild("Green Tea") then
+keyrelease(0x57)
+local args = {[1] = false}
+game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
+wait(.5)
+game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
+        PlrB["Green Tea"].Parent = Plr
+           Plr["Green Tea"]:Activate()
+local args = {
+    [1] = "Green Tea",
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
+wait(5)
+Plr["Green Tea"].Parent = PlrB
+wait(30) 
+        end
+end
+if w.flags.Dura then
+    if Plr.Humanoid.Health >= Plr.Humanoid.MaxHealth*0.25 and Plr:FindFirstChild("Combat") then
+        Plr["Combat"]:Activate()
+local args = {[1] = "M1"}
+game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
+        wait(.5)
+elseif Plr.Humanoid.Health >= Plr.Humanoid.MaxHealth*0.3 and PlrB:FindFirstChild("Combat") then
+        PlrB["Combat"].Parent = Plr
+        Plr["Combat"]:Activate()
+local args = {[1] = "M1"}
+game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
+        wait(.5)
+elseif Plr.Humanoid.Health <= Plr.Humanoid.MaxHealth*0.25 and PlrB:FindFirstChild("Strawberry Milkshake") then
+        Plr["Combat"].Parent = PlrB
+        wait(.1)
+        PlrB["Strawberry Milkshake"].Parent = Plr
+local args = {[1] = "Strawberry Milkshake",[2] = true}
+game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
+        wait(5)
+        Plr["Strawberry Milkshake"].Parent = PlrB
+        wait(20)
+        end
+    end
 end
