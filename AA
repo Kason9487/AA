@@ -353,7 +353,7 @@ Refresh.MouseButton1Click:Connect(Re)
 
 updatePlayers()
 
-while wait(.5) do
+while wait(.1) do
     for _,p in pairs (game.Players.LocalPlayer.Character:GetChildren()) do
         local Player = game.Players:GetPlayers()
         local Plr = game.Players.LocalPlayer
@@ -365,5 +365,4 @@ while wait(.5) do
         Speed.Text = "Speed : "..string.sub(StatFolder.Speed.Value,0,6)
         Stamina.Text = "Stamina : "..string.sub(StatFolder.CurrentStamina.Value,0,6).."/"..string.sub(StatFolder.Stamina.Value,0,6)
     end
-    updatePlayers()
 end
