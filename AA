@@ -32,6 +32,7 @@ local TextButton = Instance.new("TextButton")
 --Properties:
 
 ScreenGui.Name = "_1anvjiwoadnkl123456"
+syn.protect_gui(ScreenGui)
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -117,7 +118,7 @@ Refresh.Parent = ScreenGui
 Refresh.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
 Refresh.BackgroundTransparency = 0.850
 Refresh.Position = UDim2.new(0.00989583321, 0, 0.344444424, 0)
-Refresh.Size = UDim2.new(0, 298, 0, 50)
+Refresh.Size = UDim2.new(0.01, 0,0.344, 0)
 Refresh.Font = Enum.Font.SourceSansBold
 Refresh.Text = "Refresh"
 Refresh.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -353,7 +354,7 @@ Refresh.MouseButton1Click:Connect(Re)
 
 updatePlayers()
 
-while wait(.1) do
+while wait(.5) do
     for _,p in pairs (game.Players.LocalPlayer.Character:GetChildren()) do
         local Player = game.Players:GetPlayers()
         local Plr = game.Players.LocalPlayer
@@ -365,4 +366,5 @@ while wait(.1) do
         Speed.Text = "Speed : "..string.sub(StatFolder.Speed.Value,0,6)
         Stamina.Text = "Stamina : "..string.sub(StatFolder.CurrentStamina.Value,0,6).."/"..string.sub(StatFolder.Stamina.Value,0,6)
     end
+    updatePlayers()
 end
