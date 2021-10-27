@@ -148,13 +148,13 @@ if w.flags.Dura then
 local args = {[1] = "M1"}
 game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
         wait(.5)
-elseif Plr.Humanoid.Health >= Plr.Humanoid.MaxHealth*0.3 and PlrB:FindFirstChild("Combat") then
+elseif Plr.Humanoid.Health >= Plr.Humanoid.MaxHealth*0.4 and PlrB:FindFirstChild("Combat") then
         PlrB["Combat"].Parent = Plr
         Plr["Combat"]:Activate()
 local args = {[1] = "M1"}
 game:GetService("ReplicatedStorage").LocalAsset.Events.CombatHit:FireServer(unpack(args))
         wait(.5)
-elseif Plr.Humanoid.Health <= Plr.Humanoid.MaxHealth*0.25 and PlrB:FindFirstChild("Strawberry Milkshake") then
+elseif Plr.Humanoid.Health <= Plr.Humanoid.MaxHealth*0.35 and PlrB:FindFirstChild("Strawberry Milkshake") then
         Plr["Combat"].Parent = PlrB
         wait(.1)
         PlrB["Strawberry Milkshake"].Parent = Plr
