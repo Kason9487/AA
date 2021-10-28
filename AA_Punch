@@ -118,15 +118,16 @@ Plr["Protein Bar"].Parent = PlrB
 end
 end
 if w.flags.Run then
-    if Player.SavedData.CurrentStamina.Value >= 3 then
+    if Player.SavedData.CurrentStamina.Value >= 6 then
 local args = {[1] = true}
 game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
 wait(.01)
 keypress(0x57)
-elseif Player.SavedData.CurrentStamina.Value <= 2 and PlrB:FindFirstChild("Green Tea") then
-keyrelease(0x57)
+elseif Player.SavedData.CurrentStamina.Value <= 5 and PlrB:FindFirstChild("Green Tea") then
 local args = {[1] = false}
 game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
+keypress(0x57)
+keyrelease(0x57)
 wait(.5)
 game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
         PlrB["Green Tea"].Parent = Plr
