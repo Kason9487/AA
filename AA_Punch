@@ -130,7 +130,6 @@ keypress(0x57)
 keyrelease(0x57)
 wait(.5)
 game:GetService("ReplicatedStorage").LocalAsset.Events.Sprint:FireServer(unpack(args))
-        PlrB["Green Tea"].Parent = Plr
            Plr["Green Tea"]:Activate()
 local args = {
     [1] = "Green Tea",
@@ -139,7 +138,6 @@ local args = {
 
 game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
 wait(5)
-Plr["Green Tea"].Parent = PlrB
 wait(30) 
         end
 end
