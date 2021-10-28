@@ -140,6 +140,12 @@ local args = {
 game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
 wait(5)
 Plr["Green Tea"].Parent = PlrB
+local args = {
+    [1] = "Green Tea",
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").LocalAsset.Events.Consume:FireServer(unpack(args))
 wait(30) 
         end
 end
